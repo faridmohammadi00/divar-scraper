@@ -1,0 +1,94 @@
+[
+    {
+        "name": "البرز",
+        "abr": "alborz"
+    },
+    {
+        "name": "اردبیل",
+        "abr": "ardabil"
+    },
+    {
+        "name": "بوشهر",
+        "abr": "bushehr"
+    },
+    {
+        "name": "اصفهان",
+        "abr": "isfahan"
+    },
+    {
+        "name": "فارس",
+        "abr": "fars"
+    },
+    {
+        "name": "گیلان",
+        "abr": "gilan"
+    },
+    {
+        "name": "گلستان",
+        "abr": "golestan"
+    },
+    {
+        "name": "همدان",
+        "abr": "hamadan"
+    },
+    {
+        "name": "هرمزگان",
+        "abr": "hormozgan"
+    },
+    {
+        "name": "ایلام",
+        "abr": "ilam"
+    },
+    {
+        "name": "کرمان",
+        "abr": "kerman"
+    },
+    {
+        "name": "کرمانشاه",
+        "abr": "kermanshah"
+    },
+    {
+        "name": "خوزستان",
+        "abr": "khuzestan"
+    },
+    {
+        "name": "کردستان",
+        "abr": "kurdistan"
+    },
+    {
+        "name": "لرستان",
+        "abr": "lorestan"
+    },
+    {
+        "name": "مرکزی",
+        "abr": "markazi"
+    },
+    {
+        "name": "مازندران",
+        "abr": "mazandaran"
+    },
+    {
+        "name": "قزوین",
+        "abr": "qazvin"
+    },
+    {
+        "name": "قم",
+        "abr": "qom"
+    },
+    {
+        "name": "سمنان",
+        "abr": "semnan"
+    },
+    {
+        "name": "تهران",
+        "abr": "tehran"
+    },
+    {
+        "name": "یزد",
+        "abr": "yazd"
+    },
+    {
+        "name": "زنجان",
+        "abr": "zanjan"
+    }
+]
