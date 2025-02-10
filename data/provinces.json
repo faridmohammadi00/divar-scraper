@@ -1,94 +1,126 @@
 [
     {
         "name": "البرز",
-        "abr": "alborz"
+        "abr": "alborz-province"
     },
     {
         "name": "اردبیل",
-        "abr": "ardabil"
+        "abr": "ardabil-province"
+    },
+    {
+        "name": "آذربایجان غربی",
+        "abr": "azerbaijan-west-province"
+    },
+    {
+        "name": "آذربایجان شرقی",
+        "abr": "azarbaijan-east-province"
     },
     {
         "name": "بوشهر",
-        "abr": "bushehr"
+        "abr": "bushehr-province"
+    },
+    {
+        "name": "چهارمحال و بختیاری",
+        "abr": "chahar-mahaal-and-bakhtiari-province"
     },
     {
         "name": "اصفهان",
-        "abr": "isfahan"
+        "abr": "isfahan-province"
     },
     {
         "name": "فارس",
-        "abr": "fars"
+        "abr": "fars-province"
     },
     {
         "name": "گیلان",
-        "abr": "gilan"
+        "abr": "gilan-province"
     },
     {
         "name": "گلستان",
-        "abr": "golestan"
+        "abr": "golestan-province"
     },
     {
         "name": "همدان",
-        "abr": "hamadan"
+        "abr": "hamadan-province"
     },
     {
         "name": "هرمزگان",
-        "abr": "hormozgan"
+        "abr": "hormozgan-province"
     },
     {
         "name": "ایلام",
-        "abr": "ilam"
+        "abr": "ilam-province"
     },
     {
         "name": "کرمان",
-        "abr": "kerman"
+        "abr": "kerman-province"
     },
     {
         "name": "کرمانشاه",
-        "abr": "kermanshah"
+        "abr": "kermanshah-province"
     },
     {
         "name": "خوزستان",
-        "abr": "khuzestan"
+        "abr": "khuzestan-province"
+    },
+    {
+        "name": "کهگیلویه و بویراحمد",
+        "abr": "kohgiluyeh-and-boyer-ahmad-province"
     },
     {
         "name": "کردستان",
-        "abr": "kurdistan"
+        "abr": "kurdistan-province"
     },
     {
         "name": "لرستان",
-        "abr": "lorestan"
+        "abr": "lorestan-province"
     },
     {
         "name": "مرکزی",
-        "abr": "markazi"
+        "abr": "markazi-province"
     },
     {
         "name": "مازندران",
-        "abr": "mazandaran"
+        "abr": "mazandaran-province"
+    },
+    {
+        "name": "خراسان شمالی",
+        "abr": "khorasan-north-province"
     },
     {
         "name": "قزوین",
-        "abr": "qazvin"
+        "abr": "qazvin-province"
     },
     {
         "name": "قم",
         "abr": "qom"
     },
     {
+        "name": "خراسان رضوی",
+        "abr": "khorasan-razavi-province"
+    },
+    {
         "name": "سمنان",
-        "abr": "semnan"
+        "abr": "semnan-province"
+    },
+    {
+        "name": "سیستان و بلوچستان",
+        "abr": "sistan-and-baluchestan-province"
+    },
+    {
+        "name": "خراسان جنوبی",
+        "abr": "khorasan-south-province"
     },
     {
         "name": "تهران",
-        "abr": "tehran"
+        "abr": "tehran-province"
     },
     {
         "name": "یزد",
-        "abr": "yazd"
+        "abr": "yazd-province"
     },
     {
         "name": "زنجان",
-        "abr": "zanjan"
+        "abr": "zanjan-province"
     }
 ]
