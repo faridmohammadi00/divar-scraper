@@ -1,5 +1,6 @@
 import os
 import csv
+import re
 from datetime import datetime
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
@@ -18,7 +19,7 @@ chrome_options.add_argument("--disable-dev-shm-usage")
 
 driver = webdriver.Chrome(options=chrome_options)
 
-def start_process(province='tehran', token=None, scroll_count=2):
+def start_process(province='tehran-province', token=None, scroll_count=2, sleep_time=10):
     try:
         if token:
             set_basic_token(driver, token)
@@ -56,7 +57,7 @@ def start_process(province='tehran', token=None, scroll_count=2):
                 writer.writerow(item)
         print(f"Data saved to {filename}")
         
-        open_links_from_csv(driver, province, filename)
+        open_links_from_csv(driver, province, filename, sleep_time)
 
     except Exception as e:
         print(f"An error occurred: {e}")
@@ -65,7 +66,7 @@ def start_process(province='tehran', token=None, scroll_count=2):
         driver.quit()
 
 
-def open_links_from_csv(driver, province, filename):
+def open_links_from_csv(driver, province, filename, sleep_time=10):
     file_path = f"{filename}"
 
     if not os.path.exists(file_path):
@@ -90,6 +91,7 @@ def open_links_from_csv(driver, province, filename):
                 'sub_group': '',
                 'third_group': '',
                 'province': province,
+                'city': '',
                 'phone': '',
                 'title': '',
                 'description': '',
@@ -97,7 +99,7 @@ def open_links_from_csv(driver, province, filename):
 
             print(f"Opening link: {link}")
             driver.get(link)
-            time.sleep(10)
+            time.sleep(sleep_time)
 
             breadcrumb_padd = driver.find_element(By.CLASS_NAME, 'kt-breadcrumbs--padded')
             breadcrumbs = breadcrumb_padd.find_elements(By.TAG_NAME, 'li')
@@ -121,6 +123,8 @@ def open_links_from_csv(driver, province, filename):
             description = description_wrapper.find_element(By.TAG_NAME, 'p').text.strip()
             data['description'] = description
             
+            data['city'] = get_city_name(driver)
+            
             phone_number = get_phone_number(driver)
             if phone_number:
                 data['phone'] = phone_number
@@ -137,11 +141,30 @@ def open_links_from_csv(driver, province, filename):
     print("Finished opening all links.")
 
 
+def get_city_name(driver):
+    try:
+        city_element = driver.find_element(By.CLASS_NAME, "kt-page-title__subtitle")
+        city_element_text = city_element.text.strip()
+        
+        match = re.search(r"در\s+(.+)", city_element_text)
+        
+        if match:
+            city = match.group(1)
+            return city
+        
+        else: 
+            return ''
+        
+    except NoSuchElementException as e:
+        print(f"Failed to retrieve city. Error: {e}")
+        return ''
+    
+
 def get_phone_number(driver):
     try:
         post_actions = driver.find_element(By.CLASS_NAME, "post-actions")
         post_actions_btn = post_actions.find_elements(By.TAG_NAME, 'button')
-        print('post actions: ', len(post_actions_btn))
+        
         contact_btn = post_actions_btn[0]
         contact_btn.click()
         time.sleep(3)
@@ -157,11 +180,11 @@ def get_phone_number(driver):
         
         except NoSuchElementException as e:
             print(f"Failed to retrieve phone number. Error: {e}")
-            return None
+            return ''
 
     except Exception as e:
         print(f"Failed to retrieve phone number. Error: {e}")
-        return None
+        return ''
     
 
 if __name__ == "__main__":
@@ -191,5 +214,15 @@ if __name__ == "__main__":
                 print("Please enter a positive integer.")
         except ValueError:
             print("Invalid input. Please enter a valid integer.")
+            
+    while True:
+        try:
+            sleep_time = int(input("Enter the sleep duration between page openings: Default is 10 seconds: ").strip())
+            if sleep_time > 8 :
+                break
+            else:
+                print("Please enter a positive integer grater than 8: ")
+        except ValueError:
+            print("Invalid input. Please enter a valid integer.")
 
-    start_process(province_name, access_token, scroll_count)
+    start_process(province_name, access_token, scroll_count, sleep_time)
